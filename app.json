@@ -12,18 +12,17 @@
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
-    "platforms": ["android"],
     "ios": {
       "supportsTablet": true,
       "bundleIdentifier": "com.kevinroan.easyems",
       "googleServicesFile": "./GoogleService-Info.plist"
     },
     "android": {
+      "googleServicesFile": "./google-services.json",
       "adaptiveIcon": {
         "foregroundImage": "./assets/images/adaptive-icon.png",
         "backgroundColor": "#ffffff"
       },
-      "googleServiceFile": "./google-services.json",
       "package": "com.kevinroan.easyems"
     },
     "web": {
@@ -33,6 +32,14 @@
     },
     "plugins": [
       "expo-router",
+      [
+        "expo-build-properties",
+        {
+          "ios": {
+            "useFrameworks": "static"
+          }
+        }
+      ],
       "@react-native-firebase/app",
       "@react-native-firebase/auth"
     ],
